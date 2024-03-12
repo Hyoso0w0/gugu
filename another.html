@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplication Table</title>
+</head>
+<body>
+    <h1>Multiplication Table</h1>
+    <div id="multiplication-table"></div>
+
+    <script>
+        function generateMultiplicationTable() {
+            let tableHTML = '<table border="1">';
+            for (let i = 2; i <= 9; i++) {
+                tableHTML += `<tr><th colspan="3">${i}단</th></tr>`;
+                for (let j = 1; j <= 9; j++) {
+                    tableHTML += `<tr><td>${i} × ${j}</td><td>=</td><td>${i * j}</td></tr>`;
+                }
+            }
+            tableHTML += '</table>';
+            document.getElementById('multiplication-table').innerHTML = tableHTML;
+        }
+
+        // 페이지 로드 시 구구단 생성
+        generateMultiplicationTable();
+    </script>
+</body>
+</html>
+
